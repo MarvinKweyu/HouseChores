@@ -7,17 +7,13 @@ A series of scripts to automate.
 Works on automating room tasks with the script running once a week
 
 Columns of edit are: Mopping,Dishes and Buying vegetables.
-
-
-Buying greens runs on a continuous repetitive loop week to week.
-
-The column of those washing dishes and that of mopping is arranged at random with the last individual who did it not being the first to do it in the subsequent week.
-
+Columns run on a repetitive loop
+Has e-mail functionality to send for the room members
 
 ### ToDo List
 
-- Add mail
 - Add text message functionality
+-Adapt it to accept never before participants.
 
 ## Narrative
 

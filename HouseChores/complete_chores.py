@@ -2,43 +2,22 @@
 
 from room import HouseChores
 import os
+import sys
+import getpass
 
 def main():
 
-    file = "2HouseChores.xlsx"
-    file_name = "house_chores2.txt"
+    file = sys.argv[1]
     timetable = HouseChores(file)
-
-    if file_name in os.listdir():
-        # this is not the first time running the script
-        timetable.read_file()
-        timetable.write_to_file()
-    else:
-        new_members = first_time(file_name)
-        timetable.first_timetable(new_members)
-    print("Found the file reference")
+    timetable.read_file()
+    print("Writing to file...")
+    new_timetable = input("Enter the name of the file to store the new timetable: ")
+    timetable.write_to_file()
+    print("Finishing up..")
+    sender_email = input("Enter your gmail: ")
+    password = getpass.getpass()
+    timetable.notification(sender_email,password)
+    print("Done")
     return
-
-def first_time(file_name):
-    '''Create a file containing room details having run
-       the timetable for the first time'''
-
-    new_members=dict()
-    while True:
-        room_member = input("Enter room member: ").lower().capitalize()
-        if room_member:
-            email_address = input("Enter %s's email address: " %(room_member))
-            new_members[room_member] = email_address
-        else:
-            break
-    # write to file house_chores
-    file = open(file_name,'w')
-    for k,v in new_members.items():
-        file.write(k+':'+v)
-        file.write('\n')
-    file.close()
-    print("Your file has been written")
-
-    return new_members
 
 main()
