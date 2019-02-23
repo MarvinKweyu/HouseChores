@@ -13,7 +13,7 @@ Has e-mail functionality to send for the room members
 ### ToDo List
 
 - Add text message functionality
--Adapt it to accept never before participants.
+- Adapt it to accept never before participants.
 
 ## Narrative
 
