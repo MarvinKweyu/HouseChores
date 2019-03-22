@@ -1,7 +1,3 @@
-# MyProjects
-
-A series of scripts to automate.
-
 ## HouseChores
 
 Works on automating room tasks with the script running once a week to edit the excel spreadsheet.
