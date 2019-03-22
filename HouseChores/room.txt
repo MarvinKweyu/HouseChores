@@ -1,6 +1,0 @@
-Test if user has room.txt in current directory.
-If no file present,ask for room members and create timetable lasting 7 days 
-from current.
-
-If file is present,read file and look for created xlsx file using it to create 
-new timetable lasting the next 7 days from current run-time
