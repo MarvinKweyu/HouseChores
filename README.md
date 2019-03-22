@@ -4,15 +4,14 @@ A series of scripts to automate.
 
 ## HouseChores
 
-Works on automating room tasks with the script running once a week
+Works on automating room tasks with the script running once a week to edit the excel spreadsheet.
 
-Columns of edit are: Mopping,Dishes and Buying vegetables.
+Columns of edit are: Mopping,Dishes and buying greens with columns running on a repetitive loop
 
-Columns run on a repetitive loop
-Has e-mail functionality to send for the room members
+Has e-mail functionality to send the timetable as an attachment to the room members.
 
-Runs on a continuous repetitive loop week to week.
-The last individual who did it not being the first to do it in the subsequent week.
+~The csv of the room members with their mail is kept in the current working directory
+
 
 
 ### ToDo List
@@ -37,3 +36,9 @@ This works by:
 
 - Add mail functionality to allow participants if any to get mail of the resultant file.
 - Use a database to store the pdf files
+
+## Supermarket
+
+Work on the counter to make a billing system while modifying the supermarket inventory simultaneously.
+
+A notification is provided if stock is below a certain level for restock to be made.
