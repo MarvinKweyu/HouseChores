@@ -7,8 +7,13 @@ A series of scripts to automate.
 Works on automating room tasks with the script running once a week
 
 Columns of edit are: Mopping,Dishes and Buying vegetables.
+
 Columns run on a repetitive loop
 Has e-mail functionality to send for the room members
+
+Runs on a continuous repetitive loop week to week.
+The last individual who did it not being the first to do it in the subsequent week.
+
 
 ### ToDo List
 

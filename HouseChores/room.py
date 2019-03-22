@@ -59,7 +59,7 @@ class HouseChores(object):
         self.write_to_file()
 
 
-    def write_to_file(self):
+    def write_to_file(self,new_table = 'Updated_timetable.xlsx'):
         "write the new timetable to a file"
 
         #add duration of timetable
