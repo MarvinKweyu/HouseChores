@@ -10,9 +10,9 @@ import csv
 class HouseChores(object):
     """make next weeks timetable for roommates with existing timetable"""
 
-    def __init__(self,file,new_table):
+    def __init__(self,chores_file,new_table):
         '''initialize the class '''
-        self.file = file
+        self.chores_file = chores_file
         self.new_table = new_table
 
     def read_file(self):
@@ -20,7 +20,7 @@ class HouseChores(object):
         spreadsheet and store them in variables
         '''
         # read workbook
-        self.wb = openpyxl.load_workbook(self.file)
+        self.wb = openpyxl.load_workbook(self.chores_file)
         self.ws = self.wb.active
 
         self.old_mopping = []
@@ -59,7 +59,7 @@ class HouseChores(object):
         self.write_to_file()
 
 
-    def write_to_file(self,new_table = 'Updated_timetable.xlsx'):
+    def write_to_file(self):
         "write the new timetable to a file"
 
         #add duration of timetable
@@ -72,7 +72,7 @@ class HouseChores(object):
 
         self.item_number = 0
         for rowNumber in range(5,self.ws.max_row+1):#skip first five rows
-            self.ws.cell(row=rowNumber,column=4).value = self.new_mopping[self.item_number] # column 4 mopping
+            self.ws.cell(row=rowNumber,column=4).value = self.new_mopping[self.item_number] # column 4 cleaning
             self.ws.cell(row=rowNumber,column=5).value = self.new_greens[self.item_number] #greens
             self.ws.cell(row=rowNumber,column=8).value = self.new_water[self.item_number] # water
             self.item_number +=1
@@ -87,12 +87,13 @@ class HouseChores(object):
         Dear {name},here's this weeks HouseChores Schedule.
         """
 
-        with open("room.csv") as file:
+        with open("room.csv") as contacts:
             self.yag = yagmail.SMTP(sender_email,password)
-            self.reader = csv.reader(file)
+            self.reader = csv.reader(contacts)
             next(self.reader) #skip head
             for name,email in self.reader:
                 self.body = self.message.format(name=name)
+                print(f"Sending mail to {name}")
                 self.yag.send(to=email,
                          subject='House chores timetable',
                          contents=[self.body,self.new_table]
