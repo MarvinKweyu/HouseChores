@@ -9,7 +9,7 @@ Once a timetable is made on the running machine,it is(by choice) sent to the res
 
 ### Usage
 ```sh
-python main.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
+python complete_chores.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
 ```
 
 ### To-do
