@@ -1,4 +1,4 @@
-## HouseChores
+# HouseChores
 
 Works on automating house chores for the common room of four campus hostel.
 For this given room,the tasks for allocation are: Cleaning the room(mopping),Dishes and buying greens.
@@ -11,3 +11,7 @@ Once a timetable is made on the running machine,it is(by choice) sent to the res
 ```
 python main.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
 ```
+
+### To-do
+- Add text message functionality
+- Allow new timetable(for new room) to be made without knowledge of the past
