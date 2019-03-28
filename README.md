@@ -8,7 +8,7 @@ The chores run on a repetitive loop every week.
 Once a timetable is made on the running machine,it is(by choice) sent to the respective room members whos email addresses are kept in a csv file as a contacts file
 
 ### Usage
-```
+```sh
 python main.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
 ```
 
