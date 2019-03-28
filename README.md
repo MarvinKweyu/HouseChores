@@ -1,10 +1,13 @@
 ## HouseChores
 
-Works on automating room tasks with the script running once a week to edit the excel spreadsheet.
+Works on automating house chores for the common room of four campus hostel.
+For this given room,the tasks for allocation are: Cleaning the room(mopping),Dishes and buying greens.
+The script runs with an already made xlsx template file wit the following weeks timetable relying on the previous week.
+The chores run on a repetitive loop every week.
 
-Columns of edit are: Mopping,Dishes and buying greens with columns running on a repetitive loop
+Once a timetable is made on the running machine,it is(by choice) sent to the respective room members whos email addresses are kept in a csv file as a contacts file
 
-Has e-mail functionality to send the timetable as an attachment to the room members.
-
-~The csv of the room members with their mail is kept in the current working directory
-
+### Usage
+```
+python main.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
+```
