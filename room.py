@@ -56,9 +56,7 @@ class HouseChores(object):
         self.new_water += self.old_water[-4:]
         self.new_water += self.old_water[-4:-1]
 
-        self.write_to_file()
-
-    def write_to_file(self):
+    def create_table(self):
         "write the new timetable to a file"
 
         # add duration of timetable
@@ -80,14 +78,16 @@ class HouseChores(object):
         self.wb.close()
         return self.new_table
 
-    def notification(self, sender_email, password, new_table):
-        '''Send email notification to members  '''
+    def notification(self, sender_email, password, new_table, phone="room.csv"):
+        '''Send email notification to members
+        param:sender_email,password,new timetable,phonebook csv
+          '''
 
         self.message = """\
         Dear {name},here's this weeks HouseChores Schedule.
         """
 
-        with open("room.csv") as contacts:
+        with open(phone) as contacts:
             self.yag = yagmail.SMTP(sender_email, password)
             self.reader = csv.reader(contacts)
             next(self.reader)  # skip head

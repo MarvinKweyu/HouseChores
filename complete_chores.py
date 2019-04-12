@@ -43,7 +43,7 @@ def accept_files(input_file, output_file):
     timetable = HouseChores(input_file, output_file)
     timetable.read_file()
     print("Writing to file...")
-    new_table = timetable.write_to_file()
+    new_table = timetable.create_table()
     print("Finishing up..")
     sender_email = input("Enter your gmail: ")
     password = getpass.getpass()
