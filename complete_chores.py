@@ -42,7 +42,7 @@ def accept_files(input_file, output_file):
     '''Accept command line argument files and create new timetable '''
 
     timetable = HouseChores(input_file, output_file)
-    timetable.read_file()
+
     print("\nWriting to file...")
     new_table = timetable.create_table()
     print("\nFinishing up..")
