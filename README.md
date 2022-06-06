@@ -2,6 +2,7 @@
 
 Works on automating house chores for the common room of four campus hostel.
 For this given room,the tasks for allocation are: 
+
 - Cleaning the room(mopping)
 - Dishes
 - Buying greens.
@@ -12,16 +13,16 @@ The chores run on a repetitive loop every week.
 
 Once a timetable is made on the running machine,it is(by choice) sent to the respective room members whos email addresses are kept in a csv file as a contacts file
 
-### Setup
+## Setup
 ```bash
 pip install -r requirements.txt
 ```
 
-### Usage
+## Usage
 ```sh
 python complete_chores.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
 ```
 
-### To-do
+## To-do
 - Add text message functionality
 - Allow new timetable(for new room) to be made without knowledge of the past

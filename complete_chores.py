@@ -10,7 +10,8 @@ def main():
     'Give options for command line arguments'
 
     try:
-        (opts, args) = getopt.getopt(sys.argv[1:], 'hi:o:', ['help', 'input=', 'output='])
+        (opts, args) = getopt.getopt(
+            sys.argv[1:], 'hi:o:', ['help', 'input=', 'output='])
 
     except getopt.GetoptError as err:  # an option has been passed without a value
         print(err)
@@ -42,15 +43,31 @@ def accept_files(input_file, output_file):
 
     timetable = HouseChores(input_file, output_file)
     timetable.read_file()
-    print("Writing to file...")
+    print("\nWriting to file...")
     new_table = timetable.create_table()
-    print("Finishing up..")
-    sender_email = input("Enter your gmail: ")
-    password = getpass.getpass()
+    print("\nFinishing up..")
+    sender_email, password = prompt_notification()
     timetable.notification(sender_email, password, new_table)
     print("Done")
 
     return
+
+
+def prompt_notification():
+    """
+    Show a prompt to the user to send the files via email
+    """
+
+    user_selection = input(
+        "\n Do you want to send a notification to the subjects involved? (y/n)")
+
+    if user_selection.strip() == 'y':
+        sender_email = input("Enter your gmail: ")
+        password = getpass.getpass()
+        sender_email, password
+    else:
+        print("Goodbye!")
+        sys.exit()
 
 
 def usage():
