@@ -5,7 +5,7 @@ For this given room,the tasks for allocation are:
 
 - Cleaning the room(mopping)
 - Dishes
-- Buying greens.
+- Buying greens
 
 The script runs with an already made xlsx template file wit the following weeks timetable relying on the previous week.
 
@@ -26,3 +26,5 @@ python complete_chores.py -i HouseChores.xlsx -o Updated_HouseChores.xlsx
 ## To-do
 - Add text message functionality
 - Allow new timetable(for new room) to be made without knowledge of the past
+
+For reference: [TheGreenCodes](https://thegreencodes.com/getting-started-as-a-junior-software-developer)
